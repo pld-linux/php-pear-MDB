@@ -9,18 +9,22 @@ Release:	1
 License:	PHP 2.02
 Group:		Development/Languages/PHP
 Source0:	http://pear.php.net/get/%{_pearname}-%{version}.tgz
-BuildRequires:	rpm-php-pearprov
 URL:		http://pear.php.net/
+BuildRequires:	rpm-php-pearprov
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-MDB is a merge of PEAR DB's and Metabases that provides a unified DB
+MDB is a merge of PEAR's DB and Metabases that provides a unified DB
 API. It also provides methods for DB portability and DB feature
 emulation. Most notably it features a DB independent XML-Schema
 manager.
 
 %description -l pl
+MDB to po³±czenie PEAR DB i Metabases, które daje ujednolicone API do
+baz danych. Zawiera tak¿e metody zapewniaj±ce przeno¶no¶æ i emulacjê
+w³a¶ciwo¶ci dla baz danych. Najwa¿niejsza cecha to niezale¿ny od bazy
+danych menad¿er schematów XML.
 
 %prep
 %setup -q -c
