@@ -9,7 +9,7 @@ Release:	1
 License:	PHP 2.02
 Group:		Development/Languages/PHP
 Source0:	http://pear.php.net/get/%{_pearname}-%{version}.tgz
-Patch0:		%{name}-location.patch
+#Patch0:		%{name}-location.patch
 URL:		http://pear.php.net/
 BuildRequires:	rpm-php-pearprov
 BuildArch:	noarch
@@ -29,7 +29,7 @@ danych menad¿er schematów XML.
 
 %prep
 %setup -q -c
-%patch0 -p1
+#%patch0 -p1
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -37,11 +37,13 @@ install -d $RPM_BUILD_ROOT%{php_pear_dir}/%{_class}
 
 install %{_pearname}-%{version}/*.php $RPM_BUILD_ROOT%{php_pear_dir}/%{_class}/
 
+rm $RPM_BUILD_ROOT%{php_pear_dir}/%{_class}/%{_class}*test.php
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
 %dir %{php_pear_dir}/%{_class}
-%doc %{_pearname}-%{version}/*.{txt,schema}
+%doc %{_pearname}-%{version}/{*.{txt,schema},%{_class}*test.php}
 %{php_pear_dir}/%{_class}/*.php
