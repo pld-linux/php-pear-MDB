@@ -4,7 +4,7 @@
 Summary:	%{_class} - Unified Database API
 Summary(pl):	%{_class} - Zunifikowane API baz danych
 Name:		php-pear-%{_pearname}
-Version:	0.9.10
+Version:	0.9.11
 Release:	1
 License:	PHP 2.02
 Group:		Development/Languages/PHP
