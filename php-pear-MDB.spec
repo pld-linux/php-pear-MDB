@@ -1,17 +1,17 @@
 %include	/usr/lib/rpm/macros.php
 %define		_class		MDB
 %define		_pearname	%{_class}
-%define		_status		stable
+%define		_status		devel
 Summary:	%{_pearname} - unified database API
 Summary(pl):	%{_pearname} - zunifikowane API baz danych
 Name:		php-pear-%{_pearname}
-Version:	1.1.3
-Release:	1
+Version:	1.1.4
+Release:	0.RC1
 Epoch:		1
 License:	BSD style
 Group:		Development/Languages/PHP
-Source0:	http://pear.php.net/get/%{_pearname}-%{version}.tgz
-# Source0-md5:	36e989e08b512e3dbb91a915ee03174c
+Source0:	http://pear.php.net/get/%{_pearname}-%{version}-RC1.tgz
+# Source0-md5:	f03fa5f6d26da75f3b3df9a42424ad44
 URL:		http://pear.php.net/package/MDB/
 BuildRequires:	rpm-php-pearprov >= 4.0.2-98
 Requires:	php-pear
@@ -35,16 +35,16 @@ danych zarz±dca schematów XML.
 Ta klasa ma w PEAR status: %{_status}.
 
 %prep
-%setup -q -c
-
+%setup -q -c -n %{name}-%{version}-RC1
+ 
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{php_pear_dir}/%{_class}/{,Modules/{,Manager}}
 
-install %{_pearname}-%{version}/*.php $RPM_BUILD_ROOT%{php_pear_dir}/
-install %{_pearname}-%{version}/%{_class}/*.php $RPM_BUILD_ROOT%{php_pear_dir}/%{_class}/
-install %{_pearname}-%{version}/%{_class}/Modules/*.php $RPM_BUILD_ROOT%{php_pear_dir}/%{_class}/Modules/
-install %{_pearname}-%{version}/%{_class}/Modules/Manager/*.php $RPM_BUILD_ROOT%{php_pear_dir}/%{_class}/Modules/Manager/
+install %{_pearname}-%{version}-RC1/*.php $RPM_BUILD_ROOT%{php_pear_dir}/
+install %{_pearname}-%{version}-RC1/%{_class}/*.php $RPM_BUILD_ROOT%{php_pear_dir}/%{_class}/
+install %{_pearname}-%{version}-RC1/%{_class}/Modules/*.php $RPM_BUILD_ROOT%{php_pear_dir}/%{_class}/Modules/
+install %{_pearname}-%{version}-RC1/%{_class}/Modules/Manager/*.php $RPM_BUILD_ROOT%{php_pear_dir}/%{_class}/Modules/Manager/
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -54,7 +54,7 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{php_pear_dir}/%{_class}
 %dir %{php_pear_dir}/%{_class}/Modules
 %dir %{php_pear_dir}/%{_class}/Modules/Manager
-%doc %{_pearname}-%{version}/{MAINTAINERS,README,TODO,doc/,tests/}
+%doc %{_pearname}-%{version}-RC1/{MAINTAINERS,README,TODO,doc/,tests/}
 %{php_pear_dir}/*.php
 %{php_pear_dir}/%{_class}/*.php
 %{php_pear_dir}/%{_class}/Modules/*.php
