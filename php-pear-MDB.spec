@@ -1,16 +1,15 @@
 %include	/usr/lib/rpm/macros.php
 %define		_class		MDB
 %define		_pearname	%{_class}
-Summary:	%{_class} - Unified Database API
-Summary(pl):	%{_class} - Zunifikowane API baz danych
+Summary:	%{_pearname} - Unified Database API
+Summary(pl):	%{_pearname} - Zunifikowane API baz danych
 Name:		php-pear-%{_pearname}
-Version:	0.9.8
-Release:	2
+Version:	1.0
+Release:	1
+Epoch:		1
 License:	PHP 2.02
 Group:		Development/Languages/PHP
 Source0:	http://pear.php.net/get/%{_pearname}-%{version}.tgz
-#Patch0:		%{name}-location.patch
-Patch1:		%{name}-cosmetic.patch
 URL:		http://pear.php.net/
 BuildRequires:	rpm-php-pearprov
 Requires:	php-pear
@@ -31,8 +30,6 @@ danych menad¿er schematów XML.
 
 %prep
 %setup -q -c
-#%patch0 -p1
-%patch1 -p1
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -40,7 +37,8 @@ install -d $RPM_BUILD_ROOT%{php_pear_dir}/%{_class}
 
 install %{_pearname}-%{version}/*.php $RPM_BUILD_ROOT%{php_pear_dir}/%{_class}/
 
-rm $RPM_BUILD_ROOT%{php_pear_dir}/%{_class}/%{_class}*test.php
+rm $RPM_BUILD_ROOT%{php_pear_dir}/%{_class}/*test.php
+rm $RPM_BUILD_ROOT%{php_pear_dir}/%{_class}/Var_Dump.php
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -48,5 +46,5 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %dir %{php_pear_dir}/%{_class}
-%doc %{_pearname}-%{version}/{*.{txt,schema},%{_class}*test.php}
+%doc %{_pearname}-%{version}/{*.{txt,schema,html,xsl},*test.php,Var_Dump.php}
 %{php_pear_dir}/%{_class}/*.php
