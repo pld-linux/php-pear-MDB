@@ -4,7 +4,7 @@
 Summary:	%{_pearname} - Unified Database API
 Summary(pl):	%{_pearname} - Zunifikowane API baz danych
 Name:		php-pear-%{_pearname}
-Version:	1.0_RC3
+Version:	1.0_RC4
 Release:	1
 License:	PHP 2.02
 Group:		Development/Languages/PHP
