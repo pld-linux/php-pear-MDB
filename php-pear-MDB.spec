@@ -1,10 +1,10 @@
 %include	/usr/lib/rpm/macros.php
 %define		_class		MDB
 %define		_pearname	%{_class}
-Summary:	%{_class} - Unified Database API
-Summary(pl):	%{_class} - Zunifikowane API baz danych
+Summary:	%{_pearname} - Unified Database API
+Summary(pl):	%{_pearname} - Zunifikowane API baz danych
 Name:		php-pear-%{_pearname}
-Version:	1.0_RC2
+Version:	1.0_RC3
 Release:	1
 License:	PHP 2.02
 Group:		Development/Languages/PHP
@@ -45,5 +45,5 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %dir %{php_pear_dir}/%{_class}
-%doc %{_pearname}-%{version}/{*.{txt,schema},*test.php,Var_Dump.php}
+%doc %{_pearname}-%{version}/{*.{txt,schema,html,xsl},*test.php,Var_Dump.php}
 %{php_pear_dir}/%{_class}/*.php
