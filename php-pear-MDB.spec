@@ -1,8 +1,8 @@
 %include	/usr/lib/rpm/macros.php
 %define		_class		MDB
 %define		_pearname	%{_class}
-Summary:	%{_pearname} - Unified Database API
-Summary(pl):	%{_pearname} - Zunifikowane API baz danych
+Summary:	%{_pearname} - unified database API
+Summary(pl):	%{_pearname} - zunifikowane API baz danych
 Name:		php-pear-%{_pearname}
 Version:	1.0
 Release:	2
@@ -26,7 +26,7 @@ manager.
 MDB to po³±czenie PEAR DB i Metabases, które daje ujednolicone API do
 baz danych. Zawiera tak¿e metody zapewniaj±ce przeno¶no¶æ i emulacjê
 w³a¶ciwo¶ci dla baz danych. Najwa¿niejsza cecha to niezale¿ny od bazy
-danych menad¿er schematów XML.
+danych zarz±dca schematów XML.
 
 %prep
 %setup -q -c
