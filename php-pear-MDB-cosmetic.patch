@@ -1,16 +1,16 @@
---- ./MDB-0.9.8/driver_test.php.org	Fri Jul 12 19:25:40 2002
-+++ ./MDB-0.9.8/driver_test.php	Fri Jul 12 19:25:30 2002
+--- ./driver_test.php.org	Wed Jul 17 17:34:08 2002
++++ ./driver_test.php	Wed Jul 17 17:39:51 2002
 @@ -148,7 +148,7 @@
  
- 	set_time_limit(0);
- 	$input_file="driver_test.schema";
--	$manager=new metabase_manager_class;
-+	$manager=new Metabase_manager_class;
- 	$success=$manager->UpdateDatabase($input_file,$input_file.".before",$driver_arguments,$database_variables);
- 	$debug_output="";
- 	if(count($manager->warnings)>0)
---- ./MDB-0.9.8/setup_test.php.org	Thu Jul  4 21:14:51 2002
-+++ ./MDB-0.9.8/setup_test.php	Fri Jul 12 19:26:54 2002
+     set_time_limit(0);
+     $input_file="driver_test.schema";
+-    $manager=new metabase_manager_class;
++    $manager=new Metabase_manager_class;
+     $success=$manager->UpdateDatabase($input_file,$input_file.".before",$driver_arguments,$database_variables);
+     $debug_output="";
+     if(count($manager->warnings)>0)
+--- ./setup_test.php.org        Wed Jul 10 13:04:11 2002
++++ ./setup_test.php    Wed Jul 17 17:44:44 2002
 @@ -70,7 +70,7 @@
          "Password"=>"funky",
          "Debug"=>"Output"
@@ -20,3 +20,4 @@
      $manager->debug="Output";
      $success=$manager->UpdateDatabase($input_file,$input_file.".before",$arguments,$variables);
      if($success)
+
