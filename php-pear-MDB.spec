@@ -7,7 +7,7 @@ Name:		php-pear-%{_pearname}
 Version:	1.1.2
 Release:	1
 Epoch:		1
-License:	PHP 2.02
+License:	BSD style
 Group:		Development/Languages/PHP
 # Source0-md5:	09dc12461a29cb2864f7ed4b43c9090b
 Source0:	http://pear.php.net/get/%{_pearname}-%{version}.tgz
