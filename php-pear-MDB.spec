@@ -4,11 +4,12 @@
 Summary:	%{_class} - Unified Database API
 Summary(pl):	%{_class} - Zunifikowane API baz danych
 Name:		php-pear-%{_pearname}
-Version:	0.9.7.1
+Version:	0.9.8
 Release:	1
 License:	PHP 2.02
 Group:		Development/Languages/PHP
 Source0:	http://pear.php.net/get/%{_pearname}-%{version}.tgz
+Patch0:		%{name}-location.patch
 URL:		http://pear.php.net/
 BuildRequires:	rpm-php-pearprov
 BuildArch:	noarch
@@ -28,6 +29,7 @@ danych menad¿er schematów XML.
 
 %prep
 %setup -q -c
+%patch0 -p1
 
 %install
 rm -rf $RPM_BUILD_ROOT
