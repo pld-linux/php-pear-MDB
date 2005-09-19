@@ -7,14 +7,14 @@ Summary:	%{_pearname} - unified database API
 Summary(pl):	%{_pearname} - zunifikowane API baz danych
 Name:		php-pear-%{_pearname}
 Version:	1.3.0
-Release:	2
+Release:	2.2
 Epoch:		1
 License:	BSD style
 Group:		Development/Languages/PHP
 Source0:	http://pear.php.net/get/%{_pearname}-%{version}.tgz
 # Source0-md5:	a5601b6d45ffede24647cd69cf425b85
 URL:		http://pear.php.net/package/MDB/
-BuildRequires:	rpm-php-pearprov >= 4.0.2-98
+BuildRequires:	rpm-php-pearprov >= 4.4.2-10.2
 Requires:	php-pear
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -35,28 +35,38 @@ danych zarz±dca schematów XML.
 
 Ta klasa ma w PEAR status: %{_status}.
 
+%package tests
+Summary:	Tests for PEAR::%{_pearname}
+Group:		Development
+Requires:	%{name} = %{version}-%{release}
+
+%description tests
+Tests for PEAR::%{_pearname}.
+
 %prep
-%setup -q -c
+%pear_package_setup
  
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT%{php_pear_dir}/%{_class}/{,Modules/{,Manager}}
-
-install %{_pearname}-%{version}/*.php $RPM_BUILD_ROOT%{php_pear_dir}/
-install %{_pearname}-%{version}/%{_class}/*.php $RPM_BUILD_ROOT%{php_pear_dir}/%{_class}/
-install %{_pearname}-%{version}/%{_class}/Modules/*.php $RPM_BUILD_ROOT%{php_pear_dir}/%{_class}/Modules/
-install %{_pearname}-%{version}/%{_class}/Modules/Manager/*.php $RPM_BUILD_ROOT%{php_pear_dir}/%{_class}/Modules/Manager/
+install -d $RPM_BUILD_ROOT%{php_pear_dir}
+%pear_package_install
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
+%doc install.log
+%doc docs/%{_pearname}/{MAINTAINERS,README,TODO,doc/}
+%{php_pear_dir}/.registry/*.reg
 %dir %{php_pear_dir}/%{_class}
 %dir %{php_pear_dir}/%{_class}/Modules
 %dir %{php_pear_dir}/%{_class}/Modules/Manager
-%doc %{_pearname}-%{version}/{MAINTAINERS,README,TODO,doc/,tests/}
 %{php_pear_dir}/*.php
 %{php_pear_dir}/%{_class}/*.php
 %{php_pear_dir}/%{_class}/Modules/*.php
 %{php_pear_dir}/%{_class}/Modules/Manager/*.php
+
+%files tests
+%defattr(644,root,root,755)
+%{php_pear_dir}/tests/*
