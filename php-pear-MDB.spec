@@ -7,7 +7,7 @@ Summary:	%{_pearname} - unified database API
 Summary(pl):	%{_pearname} - zunifikowane API baz danych
 Name:		php-pear-%{_pearname}
 Version:	1.3.0
-Release:	2.2
+Release:	2.4
 Epoch:		1
 License:	BSD style
 Group:		Development/Languages/PHP
@@ -40,6 +40,7 @@ Summary:	Tests for PEAR::%{_pearname}
 Summary(pl):	Testy dla PEAR::%{_pearname}
 Group:		Development
 Requires:	%{name} = %{epoch}:%{version}-%{release}
+AutoReq:	no
 
 %description tests
 Tests for PEAR::%{_pearname}.
