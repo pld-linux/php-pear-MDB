@@ -1,0 +1,3 @@
+- updated to 1.1.3
+- added missing status information in description
+- fixed %install and %files
