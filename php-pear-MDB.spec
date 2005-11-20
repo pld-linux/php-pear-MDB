@@ -2,12 +2,11 @@
 %define		_class		MDB
 %define		_pearname	%{_class}
 %define		_status		stable
-
 Summary:	%{_pearname} - unified database API
 Summary(pl):	%{_pearname} - zunifikowane API baz danych
 Name:		php-pear-%{_pearname}
 Version:	1.3.0
-Release:	3
+Release:	4
 Epoch:		1
 License:	BSD style
 Group:		Development/Languages/PHP
@@ -17,7 +16,7 @@ URL:		http://pear.php.net/package/MDB/
 BuildRequires:	rpm-php-pearprov >= 4.4.2-11
 Requires:	php-common >= 3:4.2.0
 Requires:	php-pear
-Requires:	php-pear-PEAR >= 1:1.0b1
+Requires:	php-pear-PEAR-core >= 1:1.0b1
 Requires:	php-pear-XML_Parser
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
