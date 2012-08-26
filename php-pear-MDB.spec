@@ -1,12 +1,11 @@
-%include	/usr/lib/rpm/macros.php
-%define		_class		MDB
-%define		_pearname	%{_class}
 %define		_status		stable
+%define		_pearname	MDB
+%include	/usr/lib/rpm/macros.php
 Summary:	%{_pearname} - unified database API
 Summary(pl.UTF-8):	%{_pearname} - zunifikowane API baz danych
 Name:		php-pear-%{_pearname}
 Version:	1.3.0
-Release:	7
+Release:	8
 Epoch:		1
 License:	BSD style
 Group:		Development/Languages/PHP
@@ -16,7 +15,7 @@ URL:		http://pear.php.net/package/MDB/
 BuildRequires:	php-pear-PEAR
 BuildRequires:	rpm-php-pearprov >= 4.4.2-11
 BuildRequires:	rpmbuild(macros) >= 1.300
-Requires:	php-common >= 3:4.2.0
+Requires:	php(core) >= 4.2.0
 Requires:	php-pear
 Requires:	php-pear-PEAR-core >= 1:1.0-0.b1
 Requires:	php-pear-XML_Parser
@@ -56,10 +55,10 @@ rm -rf $RPM_BUILD_ROOT
 %doc install.log
 %doc docs/%{_pearname}/{MAINTAINERS,README,TODO,doc/}
 %{php_pear_dir}/.registry/*.reg
-%dir %{php_pear_dir}/%{_class}
-%dir %{php_pear_dir}/%{_class}/Modules
-%dir %{php_pear_dir}/%{_class}/Modules/Manager
+%dir %{php_pear_dir}/MDB
+%dir %{php_pear_dir}/MDB/Modules
+%dir %{php_pear_dir}/MDB/Modules/Manager
 %{php_pear_dir}/*.php
-%{php_pear_dir}/%{_class}/*.php
-%{php_pear_dir}/%{_class}/Modules/*.php
-%{php_pear_dir}/%{_class}/Modules/Manager/*.php
+%{php_pear_dir}/MDB/*.php
+%{php_pear_dir}/MDB/Modules/*.php
+%{php_pear_dir}/MDB/Modules/Manager/*.php
